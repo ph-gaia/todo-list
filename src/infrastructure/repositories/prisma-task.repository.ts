@@ -10,7 +10,7 @@ export class PrismaTaskRepository implements TaskRepository {
 
   async listByUserId(userId: string) {
     return await prisma.task.findMany({
-      where: { user_id: userId },
+      where: { userId: userId },
       orderBy: { createdAt: "desc" },
     })
   }
